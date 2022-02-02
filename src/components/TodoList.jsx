@@ -1,0 +1,20 @@
+import React from 'react'
+// import components
+import Todo from './Todo';
+
+const TodoList = ({todos, setTodos, filteredTodos}) => {
+
+
+    
+    return (
+        <div className="todo-container">
+            <ul className="todo-list">
+                {filteredTodos.map(todo => (
+                    <Todo setTodos={setTodos} todos={todos} key={todo.id} todo={todo} text = {todo.text}/>  //we adding key for react to know when we want to delete witch data exactly we want to delete
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default TodoList;
